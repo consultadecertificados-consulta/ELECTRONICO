@@ -23,14 +23,16 @@
             display: flex;
             flex-direction: column;
             background-color: #f4f4f4;
-            /* TAPIZ VISIBLE */
             background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 100 100'%3E%3Cpath d='M0 0l50 50L0 100' stroke='%23d8d8d8' fill='none' stroke-width='1'/%3E%3Cpath d='M100 0L50 50l50 50' stroke='%23d8d8d8' fill='none' stroke-width='1'/%3E%3C/svg%3E");
             background-attachment: fixed;
         }
 
+        /* HEADER CON LINKS */
         header { background-color: #0B231E; padding: 15px 50px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .logo-container { height: 50px; }
-        .logo-gob { height: 100%; width: auto; }
+        .logo-container a { display: block; height: 100%; transition: opacity 0.2s; }
+        .logo-container a:hover { opacity: 0.8; }
+        .logo-gob { height: 100%; width: auto; cursor: pointer; }
         .barra-oro { background-color: var(--gob-guinda); height: 10px; border-bottom: 4px solid var(--gob-oro); }
 
         main { flex: 1; max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; width: 100%; }
@@ -40,7 +42,6 @@
         .titulos-sep h3 { font-weight: 600; font-size: 20px; color: #666; margin-bottom: 15px; }
         .titulos-sep p { font-weight: 400; color: var(--gob-oro); font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px; padding-top: 10px; border-top: 1px solid #ddd; display: inline-block; }
 
-        /* CONTENEDOR DE BÚSQUEDA */
         .search-container {
             background: #ffffff;
             border: 2px solid var(--gob-oro); 
@@ -59,6 +60,7 @@
             font-size: 18px;
             margin-bottom: 25px;
             font-family: 'Montserrat', sans-serif;
+            outline-color: var(--gob-oro);
         }
 
         .button-group {
@@ -80,12 +82,15 @@
             cursor: pointer;
             font-weight: 600;
             color: white;
+            transition: all 0.2s;
         }
 
         .btn-buscar { background-color: var(--gob-verde-oscuro); }
+        .btn-buscar:hover { background-color: #14352a; transform: translateY(-1px); }
         .btn-restablecer { background-color: var(--gob-gris-boton); }
+        .btn-restablecer:hover { background-color: #5a5a5a; }
 
-        /* SECCIÓN DE RESULTADOS MEJORADA */
+        /* RESULTADOS */
         #resultado { 
             display: none; 
             margin-top: 40px; 
@@ -97,7 +102,7 @@
             padding: 25px; 
             border-radius: 8px; 
             border: 1px solid #ddd;
-            margin-bottom: 50px; /* Espacio extra para que no pegue al footer */
+            margin-bottom: 50px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
@@ -106,14 +111,16 @@
             font-family: 'Montserrat', sans-serif; 
             border-bottom: 1px solid #f0f0f0; 
             padding-bottom: 10px;
-            word-wrap: break-word; /* Evita que el texto largo se salga */
         }
 
-        .info-label { font-weight: 700; color: #333; font-size: 15px; display: block; margin-bottom: 4px; }
-        .info-value { font-weight: 400; color: #666; font-size: 16px; text-transform: uppercase; display: block; }
+        .info-label { font-weight: 700; color: #333; font-size: 14px; display: block; margin-bottom: 2px; }
+        .info-value { font-weight: 400; color: #555; font-size: 16px; text-transform: uppercase; }
 
+        /* FOOTER CON LINK */
         footer { background-color: var(--gob-guinda); color: white; padding: 40px 20px; margin-top: auto; font-family: 'Montserrat', sans-serif; }
         .footer-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
+        .footer-logo a { display: inline-block; transition: opacity 0.2s; }
+        .footer-logo a:hover { opacity: 0.8; }
         .footer-logo img { width: 180px; filter: brightness(0) invert(1); }
     </style>
 </head>
@@ -121,7 +128,9 @@
 
 <header>
     <div class="logo-container">
-        <img class="logo-gob" src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Gobierno de México">
+        <a href="https://www.gob.mx" target="_blank" rel="noopener noreferrer">
+            <img class="logo-gob" src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Gobierno de México">
+        </a>
     </div>
 </header>
 <div class="barra-oro"></div>
@@ -134,7 +143,7 @@
     </div>
 
     <div class="search-container">
-        <input type="text" id="folioInput" placeholder="Ingrese el folio (Ej: CBG3760390000)">
+        <input type="text" id="folioInput" placeholder="Ingrese el folio (Ej: CBG3760391153)">
         <div class="button-group">
             <button class="btn-buscar" onclick="buscar()">Buscar</button>
             <button class="btn-restablecer" onclick="restablecer()">Restablecer</button>
@@ -150,7 +159,9 @@
 <footer>
     <div class="footer-content">
         <div class="footer-logo">
-            <img src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Gobierno de México">
+            <a href="https://www.gob.mx/sep" target="_blank" rel="noopener noreferrer">
+                <img src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Gobierno de México">
+            </a>
         </div>
         <div style="font-size: 13px; opacity: 0.8;">SEP | SEMS | 2026</div>
     </div>
@@ -181,29 +192,33 @@
     };
 
     function buscar() {
-        const folio = document.getElementById('folioInput').value.trim().toUpperCase();
+        const input = document.getElementById('folioInput');
+        const folio = input.value.trim().toUpperCase();
         const resDiv = document.getElementById('resultado');
         const detalle = document.getElementById('infoDetalle');
+
+        if (folio === "") {
+            alert("Por favor, ingrese un número de folio.");
+            input.focus();
+            return;
+        }
 
         if (baseDatos[folio]) {
             const d = baseDatos[folio];
             detalle.innerHTML = `
-                <div class="info-item"><span class="info-label">Nombre:</span> <span class="info-value">${d.nombre}</span></div>
+                <div class="info-item"><span class="info-label">Nombre del Titular:</span> <span class="info-value">${d.nombre}</span></div>
                 <div class="info-item"><span class="info-label">Número de Matrícula:</span> <span class="info-value">${d.matricula}</span></div>
-                <div class="info-item"><span class="info-label">Plantel:</span> <span class="info-value">${d.plantel}</span></div>
+                <div class="info-item"><span class="info-label">Institución / Plantel:</span> <span class="info-value">${d.plantel}</span></div>
                 <div class="info-item"><span class="info-label">Plan de Estudios:</span> <span class="info-value">${d.plan}</span></div>
-                <div class="info-item"><span class="info-label">Promedio:</span> <span class="info-value">${d.promedio}</span></div>
-                <div class="info-item"><span class="info-label">Créditos:</span> <span class="info-value">${d.creditos}</span></div>
-                <div class="info-item"><span class="info-label">Estatus:</span> <span class="info-value" style="color:#27ae60; font-weight:bold;">${d.estatus}</span></div>
-                <div class="info-item"><span class="info-label">Folio:</span> <span class="info-value">${folio}</span></div>
-                <div class="info-item"><span class="info-label">Fecha de Timbrado:</span> <span class="info-value">${d.timbrado}</span></div>
-                <div class="info-item" style="border:none;"><span class="info-label">Correo de Contacto:</span> <span class="info-value" style="text-transform:lowercase;">${d.correo}</span></div>
+                <div class="info-item"><span class="info-label">Promedio Final:</span> <span class="info-value">${d.promedio}</span></div>
+                <div class="info-item"><span class="info-label">Créditos Cubiertos:</span> <span class="info-value">${d.creditos}</span></div>
+                <div class="info-item"><span class="info-label">Estatus del Documento:</span> <span class="info-value" style="color:#27ae60; font-weight:bold;">${d.estatus}</span></div>
+                <div class="info-item"><span class="info-label">Folio de Validación:</span> <span class="info-value">${folio}</span></div>
+                <div class="info-item"><span class="info-label">Fecha y Hora de Timbrado:</span> <span class="info-value">${d.timbrado}</span></div>
+                <div class="info-item" style="border:none;"><span class="info-label">Contacto para Aclaraciones:</span> <span class="info-value" style="text-transform:lowercase; color:#0056b3;">${d.correo}</span></div>
             `;
             resDiv.style.display = 'block';
-            
-            // DESPLAZAMIENTO AUTOMÁTICO A LOS RESULTADOS
             resDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
-
         } else {
             alert("El folio no se encuentra en nuestra base de datos. Verifique los dígitos.");
             resDiv.style.display = 'none';
@@ -215,6 +230,13 @@
         document.getElementById('resultado').style.display = 'none';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
+
+    // LISTENER PARA TECLA ENTER
+    document.getElementById('folioInput').addEventListener('keypress', function (e) {
+        if (e.key === 'Enter') {
+            buscar();
+        }
+    });
 </script>
 
 </body>
