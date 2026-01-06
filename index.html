@@ -1,9 +1,9 @@
-<<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Consulta de Certificación Electrónica | Gobierno</title>
+    <title>Consulta de Certificación Electrónica | SEMS</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Lora:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
@@ -62,14 +62,6 @@
             box-shadow: 0 10px 25px rgba(0,0,0,0.1);
         }
 
-        .search-container p.instruccion {
-            font-family: 'Montserrat', sans-serif;
-            font-size: 14px;
-            color: #555;
-            margin-bottom: 20px;
-            text-align: left;
-        }
-
         input[type="text"] {
             width: 100%;
             padding: 15px;
@@ -102,6 +94,7 @@
             display: none; margin-top: 40px; text-align: left; background: white; 
             padding: 30px; border-radius: 8px; border: 1px solid #ddd;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1); animation: fadeIn 0.5s;
+            margin-bottom: 50px;
         }
 
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
@@ -117,7 +110,7 @@
             color: white; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 12px;
         }
 
-        /* Footer Estilo gob.mx */
+        /* Footer Estilo gob.mx Corregido */
         footer { background-color: #13322B; color: white; padding: 50px 0 20px 0; font-family: 'Montserrat', sans-serif; }
         .footer-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding: 0 20px; }
         .footer-col h4 { font-size: 16px; margin-bottom: 20px; border-bottom: 1px solid var(--gob-oro); display: inline-block; padding-bottom: 5px; }
@@ -128,7 +121,7 @@
         @media (max-width: 600px) {
             .grid-resultados { grid-template-columns: 1fr; }
             nav.gob-header { padding: 10px 20px; }
-            .nav-links-gob { display: none; } /* Ocultar links en móvil para limpieza */
+            .nav-links-gob { display: none; }
         }
     </style>
 </head>
@@ -139,9 +132,9 @@
         <img class="logo-gob" src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Gobierno de México">
     </a>
     <ul class="nav-links-gob">
-        <li><a href="#">Trámites</a></li>
-        <li><a href="#">Gobierno</a></li>
-        <li><a href="#"><i class="fas fa-search"></i></a></li>
+        <li><a href="https://www.gob.mx/tramites">Trámites</a></li>
+        <li><a href="https://www.gob.mx/gobierno">Gobierno</a></li>
+        <li><a href="https://www.gob.mx/busqueda"><i class="fas fa-search"></i></a></li>
     </ul>
 </nav>
 <div class="barra-oro"></div>
@@ -154,8 +147,8 @@
     </div>
 
     <div class="search-container">
-        <p class="instruccion">Introduzca el Folio SEP que aparece en su documento para validar su autenticidad en el Registro Nacional.</p>
-        <input type="text" id="folioInput" placeholder="Ejemplo: CBG3760000000" maxlength="20">
+        <p style="text-align: left; font-size: 14px; margin-bottom: 15px; font-family: 'Montserrat';">Ingrese el folio de control para validar el documento:</p>
+        <input type="text" id="folioInput" placeholder="Ej: CBG3760391153" maxlength="20">
         <div class="button-group">
             <button class="btn-buscar" onclick="buscar()">CONSULTAR</button>
             <button class="btn-restablecer" onclick="restablecer()">LIMPIAR</button>
@@ -165,7 +158,7 @@
     <div id="resultado">
         <div style="margin-bottom: 20px; border-left: 5px solid var(--gob-verde-exito); padding-left: 15px;">
             <h4 style="font-family: 'Montserrat'; color: var(--gob-verde-oscuro);">Resultado de la Validación</h4>
-            <p style="font-size: 13px; color: #666;">Documento localizado y vigente en el Sistema Educativo Nacional.</p>
+            <p style="font-size: 13px; color: #666;">El documento ha sido localizado y autenticado exitosamente.</p>
         </div>
         <div id="infoDetalle" class="grid-resultados"></div>
     </div>
@@ -174,29 +167,31 @@
 <footer>
     <div class="footer-container">
         <div class="footer-col">
-            <img src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" width="150" style="filter: brightness(0) invert(1); margin-bottom: 20px;">
+            <a href="https://www.gob.mx">
+                <img src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" width="150" style="filter: brightness(0) invert(1); margin-bottom: 20px;">
+            </a>
         </div>
         <div class="footer-col">
             <h4>Enlaces</h4>
-            <a href="#">Participa</a>
-            <a href="#">Publicaciones Oficiales</a>
-            <a href="#">Marco Jurídico</a>
-            <a href="#">Plataforma Nacional de Transparencia</a>
+            <a href="https://participa.gob.mx" target="_blank">Participa</a>
+            <a href="https://www.gob.mx/publicaciones" target="_blank">Publicaciones Oficiales</a>
+            <a href="http://www.ordenjuridico.gob.mx" target="_blank">Marco Jurídico</a>
+            <a href="https://consultapublicamx.inai.org.mx/vut-web/" target="_blank">Plataforma Nacional de Transparencia</a>
         </div>
         <div class="footer-col">
             <h4>¿Qué es gob.mx?</h4>
-            <a href="#">Declaración de Accesibilidad</a>
-            <a href="#">Aviso de Privacidad Integral</a>
-            <a href="#">Términos y Condiciones</a>
-            <a href="#">Política de Seguridad</a>
+            <a href="https://www.gob.mx/que-es-gobmx" target="_blank">Declaración de Accesibilidad</a>
+            <a href="https://www.gob.mx/aviso_de_privacidad" target="_blank">Aviso de Privacidad Integral</a>
+            <a href="https://www.gob.mx/terminos" target="_blank">Términos y Condiciones</a>
+            <a href="https://www.gob.mx/terminos#medidas-seguridad-informacion" target="_blank">Política de Seguridad</a>
         </div>
         <div class="footer-col">
             <h4>Contacto</h4>
-            <a href="#">Mesa de ayuda: dudas e información</a>
-            <a href="#">Denuncia contra servidores públicos</a>
+            <a href="https://www.gob.mx/tramites/ficha/presentacion-de-quejas-y-denuncias-en-la-sfp/SFP54" target="_blank">Denuncias</a>
+            <a href="mailto:controlescolar.estatal@sems.sidgbe.gob.mx">Mesa de ayuda</a>
             <div style="margin-top: 15px;">
-                <i class="fab fa-facebook-f" style="margin-right: 15px;"></i>
-                <i class="fab fa-twitter"></i>
+                <a href="https://www.facebook.com/gobmexico" target="_blank" style="display:inline; margin-right:15px; color:white;"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://twitter.com/gobmx" target="_blank" style="display:inline; color:white;"><i class="fab fa-twitter"></i></a>
             </div>
         </div>
     </div>
@@ -206,7 +201,6 @@
 </footer>
 
 <script>
-    // Base de datos integrada (20 folios)
     const baseDatos = {
         "CBG3760391153": { nombre: "LUIS ANGEL GONZALEZ SANCHEZ", matricula: "1501R850623", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE MICHOACAN", plantel: "BACHILLERATO ABIERTO", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-11 14:29:35", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
         "CBG3760391154": { nombre: "JUAN CARLOS RAMIREZ LUNA", matricula: "1502M900412", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CEB 4/1", plan: "BACHILLERATO GENERAL", promedio: "9.2", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-11 15:10:22", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
@@ -235,7 +229,7 @@
         const resDiv = document.getElementById('resultado');
         const detalle = document.getElementById('infoDetalle');
 
-        if (folio === "") {
+        if (!folio) {
             alert("Por favor, ingrese un folio.");
             return;
         }
@@ -243,12 +237,12 @@
         if (baseDatos[folio]) {
             const d = baseDatos[folio];
             detalle.innerHTML = `
-                <div class="info-item"><span class="info-label">Nombre completo:</span> <span class="info-value">${d.nombre}</span></div>
+                <div class="info-item"><span class="info-label">Nombre del Alumno:</span> <span class="info-value">${d.nombre}</span></div>
                 <div class="info-item"><span class="info-label">Matrícula:</span> <span class="info-value">${d.matricula}</span></div>
                 <div class="info-item"><span class="info-label">Plan Académico:</span> <span class="info-value">${d.plan}</span></div>
                 <div class="info-item"><span class="info-label">Folio de Control:</span> <span class="info-value">${folio}</span></div>
                 <div class="info-item"><span class="info-label">Promedio Final:</span> <span class="info-value">${d.promedio}</span></div>
-                <div class="info-item"><span class="info-label">Créditos:</span> <span class="info-value">${d.creditos} / ${d.creditos}</span></div>
+                <div class="info-item"><span class="info-label">Créditos Totales:</span> <span class="info-value">${d.creditos}</span></div>
                 <div class="info-item"><span class="info-label">Estatus:</span> <span class="badge-registro">${d.estatus}</span></div>
                 <div class="info-item"><span class="info-label">Fecha de Validación:</span> <span class="info-value">${d.timbrado}</span></div>
                 <div class="info-item" style="grid-column: span 2;">
@@ -259,7 +253,7 @@
             resDiv.style.display = 'block';
             resDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
         } else {
-            alert("No se encontraron registros con ese folio. Verifique que sea correcto.");
+            alert("No se encontró el folio en el Registro Nacional.");
             resDiv.style.display = 'none';
         }
     }
@@ -267,10 +261,10 @@
     function restablecer() {
         document.getElementById('folioInput').value = "";
         document.getElementById('resultado').style.display = 'none';
+        window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // Permitir buscar con la tecla Enter
-    document.getElementById('folioInput').addEventListener('keypress', function (e) {
+    document.getElementById('folioInput').addEventListener('keypress', (e) => {
         if (e.key === 'Enter') buscar();
     });
 </script>
