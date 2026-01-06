@@ -9,20 +9,26 @@
         body { padding-top: 70px; background-color: #ffffff; font-family: 'Arial', sans-serif; }
         .navbar { background-color: #285C4D !important; }
         .btn-success { background-color: #285C4D !important; border-color: #285C4D !important; }
+        
         #DatosCertificado { display: none; margin-bottom: 50px; }
+        
         .card { border-radius: 0; border: 1px solid #ccc; box-shadow: none; }
         .card-header { background-color: #fff !important; border-bottom: 2px solid #285C4D; padding: 15px; }
-        .logo-nav { height: 40px; width: auto; margin-right: 10px; }
-        .logo-cert { height: 70px; width: auto; margin-bottom: 10px; }
+        
+        /* Ajustes para el logo */
+        .logo-nav { height: 45px; width: auto; margin-right: 15px; }
+        .logo-cert { height: 80px; width: auto; margin-bottom: 10px; display: block; margin-left: auto; margin-right: auto; }
+        
         .table td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
         .table b { color: #333; }
+        
         #lblFolio { word-break: break-all; color: #333; font-weight: bold; font-family: monospace; }
     </style>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-dark">
         <div class="container-fluid d-flex justify-content-center align-items-center">
-            <img src="logo.png" class="logo-nav" onerror="this.style.display='none'">
+            <img src="logo.png" class="logo-nav" alt="">
             <a class="navbar-brand" style="color: #FFFFFF">Validación de certificados INEA</a>
         </div>
     </nav>
@@ -52,7 +58,7 @@
             </div>
             <div class="card">
                 <div class="card-header text-center">
-                    <img src="logo.png" class="logo-cert" onerror="this.style.display='none'"><br>
+                    <img src="logo.png" class="logo-cert" alt="">
                     <h4 class="mb-0" style="color: #285C4D;">INSTITUTO NACIONAL PARA LA EDUCACIÓN DE LOS ADULTOS</h4>
                 </div>
                 <div class="card-body p-4">
@@ -81,12 +87,10 @@
     </footer>
 
     <script>
-        // Aquí puedes pegar tus 50 folios siguiendo este formato:
         const baseDatos = {
             "9da9226f-6e07-41cc-81f6-23cb903e6593": { nombre: "VIANNEY VILLARREAL COTA", nivel: "SECUNDARIA", promedio: "7.7", conclusion: "2024-11-24", emision: "2024-11-29", lugar: "CAMPECHE, CAMPECHE", id: "0410255274" },
-            "8ea8226f-5f07-41cc-81f6-23cb903e7500": { nombre: "CARLOS ALBERTO MEZA", nivel: "SECUNDARIA", promedio: "8.5", conclusion: "2024-10-15", emision: "2024-10-20", lugar: "CIUDAD DE MÉXICO", id: "0511255380" },
-            "7ca7226f-4e07-21cc-81f6-01cb903e6570": { nombre: "BEATRIZ ELENA RIVAS", nivel: "PRIMARIA", promedio: "9.2", conclusion: "2025-01-10", emision: "2025-01-15", lugar: "MONTERREY, NL", id: "0612255490" }
-            // Continúa pegando aquí el resto hasta completar los 50...
+            "8ea8226f-5f07-41cc-81f6-23cb903e7500": { nombre: "CARLOS ALBERTO MEZA", nivel: "SECUNDARIA", promedio: "8.5", conclusion: "2024-10-15", emision: "2024-10-20", lugar: "CIUDAD DE MÉXICO", id: "0511255380" }
+            // Aquí puedes seguir pegando tus 50 folios
         };
 
         function validarFolio() {
@@ -101,6 +105,7 @@
                 document.getElementById('lblLugar').innerText = d.lugar;
                 document.getElementById('lblID').innerText = d.id;
                 document.getElementById('lblFolio').innerText = fInput.toUpperCase();
+
                 document.getElementById('Busqueda').style.display = 'none';
                 document.getElementById('DatosCertificado').style.display = 'block';
                 window.scrollTo(0, 0);
@@ -117,4 +122,3 @@
     </script>
 </body>
 </html>
-        
