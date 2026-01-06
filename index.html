@@ -12,6 +12,7 @@
             --gob-oro: #9D843E;   
             --gob-verde-oscuro: #1D4E3E; 
             --gob-gris-boton: #757575;   
+            --gob-verde-exito: #28a745;
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -27,15 +28,14 @@
             background-attachment: fixed;
         }
 
-        /* HEADER CON LINKS */
         header { background-color: #0B231E; padding: 15px 50px; display: flex; align-items: center; border-bottom: 1px solid rgba(255,255,255,0.1); }
         .logo-container { height: 50px; }
         .logo-container a { display: block; height: 100%; transition: opacity 0.2s; }
         .logo-container a:hover { opacity: 0.8; }
-        .logo-gob { height: 100%; width: auto; cursor: pointer; }
+        .logo-gob { height: 100%; width: auto; }
         .barra-oro { background-color: var(--gob-guinda); height: 10px; border-bottom: 4px solid var(--gob-oro); }
 
-        main { flex: 1; max-width: 900px; margin: 40px auto; padding: 0 20px; text-align: center; width: 100%; }
+        main { flex: 1; max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; width: 100%; }
 
         .titulos-sep { margin-bottom: 40px; font-family: 'Montserrat', sans-serif; }
         .titulos-sep h2 { font-weight: 700; font-size: 24px; color: #444; margin-bottom: 5px; }
@@ -60,7 +60,6 @@
             font-size: 18px;
             margin-bottom: 25px;
             font-family: 'Montserrat', sans-serif;
-            outline-color: var(--gob-oro);
         }
 
         .button-group {
@@ -82,53 +81,66 @@
             cursor: pointer;
             font-weight: 600;
             color: white;
-            transition: all 0.2s;
         }
 
         .btn-buscar { background-color: var(--gob-verde-oscuro); }
-        .btn-buscar:hover { background-color: #14352a; transform: translateY(-1px); }
         .btn-restablecer { background-color: var(--gob-gris-boton); }
-        .btn-restablecer:hover { background-color: #5a5a5a; }
 
-        /* RESULTADOS */
+        /* NUEVA ESTRUCTURA DE RESULTADOS EN COLUMNAS */
         #resultado { 
             display: none; 
             margin-top: 40px; 
             text-align: left; 
-            max-width: 780px; 
+            max-width: 850px; 
             margin-left: auto; 
             margin-right: auto; 
             background: white; 
-            padding: 25px; 
+            padding: 30px; 
             border-radius: 8px; 
             border: 1px solid #ddd;
             margin-bottom: 50px; 
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
         }
 
-        .info-item { 
-            margin-bottom: 15px; 
-            font-family: 'Montserrat', sans-serif; 
-            border-bottom: 1px solid #f0f0f0; 
-            padding-bottom: 10px;
+        .grid-resultados {
+            display: grid;
+            grid-template-columns: 1fr 1fr; /* Dos columnas */
+            gap: 20px;
         }
 
-        .info-label { font-weight: 700; color: #333; font-size: 14px; display: block; margin-bottom: 2px; }
-        .info-value { font-weight: 400; color: #555; font-size: 16px; text-transform: uppercase; }
+        .info-item { 
+            font-family: 'Montserrat', sans-serif; 
+            border-bottom: 1px solid #f0f0f0; 
+            padding-bottom: 8px;
+        }
 
-        /* FOOTER CON LINK */
+        .info-label { font-weight: 700; color: #333; font-size: 13px; display: block; margin-bottom: 4px; }
+        .info-value { font-weight: 400; color: #666; font-size: 15px; text-transform: uppercase; display: block; }
+
+        /* ESTILO ESPECIAL PARA ESTATUS */
+        .badge-registro {
+            background-color: var(--gob-verde-exito);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 4px;
+            font-weight: 700;
+            display: inline-block;
+        }
+
         footer { background-color: var(--gob-guinda); color: white; padding: 40px 20px; margin-top: auto; font-family: 'Montserrat', sans-serif; }
         .footer-content { max-width: 1000px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 20px; }
-        .footer-logo a { display: inline-block; transition: opacity 0.2s; }
-        .footer-logo a:hover { opacity: 0.8; }
         .footer-logo img { width: 180px; filter: brightness(0) invert(1); }
+
+        @media (max-width: 600px) {
+            .grid-resultados { grid-template-columns: 1fr; } /* Una columna en móvil */
+        }
     </style>
 </head>
 <body>
 
 <header>
     <div class="logo-container">
-        <a href="https://www.gob.mx" target="_blank" rel="noopener noreferrer">
+        <a href="https://www.gob.mx" target="_blank">
             <img class="logo-gob" src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Gobierno de México">
         </a>
     </div>
@@ -152,14 +164,14 @@
     </div>
 
     <div id="resultado">
-        <div id="infoDetalle"></div>
+        <div id="infoDetalle" class="grid-resultados"></div>
     </div>
 </main>
 
 <footer>
     <div class="footer-content">
         <div class="footer-logo">
-            <a href="https://www.gob.mx/sep" target="_blank" rel="noopener noreferrer">
+            <a href="https://www.gob.mx/sep" target="_blank">
                 <img src="https://framework-gb.cdn.gob.mx/landing/img/logoheader.svg" alt="Gobierno de México">
             </a>
         </div>
@@ -192,35 +204,30 @@
     };
 
     function buscar() {
-        const input = document.getElementById('folioInput');
-        const folio = input.value.trim().toUpperCase();
+        const folio = document.getElementById('folioInput').value.trim().toUpperCase();
         const resDiv = document.getElementById('resultado');
         const detalle = document.getElementById('infoDetalle');
-
-        if (folio === "") {
-            alert("Por favor, ingrese un número de folio.");
-            input.focus();
-            return;
-        }
 
         if (baseDatos[folio]) {
             const d = baseDatos[folio];
             detalle.innerHTML = `
-                <div class="info-item"><span class="info-label">Nombre del Titular:</span> <span class="info-value">${d.nombre}</span></div>
-                <div class="info-item"><span class="info-label">Número de Matrícula:</span> <span class="info-value">${d.matricula}</span></div>
-                <div class="info-item"><span class="info-label">Institución / Plantel:</span> <span class="info-value">${d.plantel}</span></div>
-                <div class="info-item"><span class="info-label">Plan de Estudios:</span> <span class="info-value">${d.plan}</span></div>
-                <div class="info-item"><span class="info-label">Promedio Final:</span> <span class="info-value">${d.promedio}</span></div>
-                <div class="info-item"><span class="info-label">Créditos Cubiertos:</span> <span class="info-value">${d.creditos}</span></div>
-                <div class="info-item"><span class="info-label">Estatus del Documento:</span> <span class="info-value" style="color:#27ae60; font-weight:bold;">${d.estatus}</span></div>
-                <div class="info-item"><span class="info-label">Folio de Validación:</span> <span class="info-value">${folio}</span></div>
-                <div class="info-item"><span class="info-label">Fecha y Hora de Timbrado:</span> <span class="info-value">${d.timbrado}</span></div>
-                <div class="info-item" style="border:none;"><span class="info-label">Contacto para Aclaraciones:</span> <span class="info-value" style="text-transform:lowercase; color:#0056b3;">${d.correo}</span></div>
+                <div class="info-item"><span class="info-label">Nombre:</span> <span class="info-value">${d.nombre}</span></div>
+                <div class="info-item"><span class="info-label">Matrícula:</span> <span class="info-value">${d.matricula}</span></div>
+                <div class="info-item"><span class="info-label">Plan Académico:</span> <span class="info-value">${d.plan}</span></div>
+                <div class="info-item"><span class="info-label">Folio:</span> <span class="info-value">${folio}</span></div>
+                <div class="info-item"><span class="info-label">Promedio:</span> <span class="info-value">${d.promedio}</span></div>
+                <div class="info-item"><span class="info-label">Créditos:</span> <span class="info-value">${d.creditos}</span></div>
+                <div class="info-item"><span class="info-label">Estatus:</span> <span class="badge-registro">${d.estatus}</span></div>
+                <div class="info-item"><span class="info-label">Fecha de Timbrado:</span> <span class="info-value">${d.timbrado}</span></div>
+                <div class="info-item" style="grid-column: span 2; border:none;">
+                    <span class="info-label">Contacto:</span> 
+                    <span class="info-value" style="text-transform:lowercase; color: #0056b3;">${d.correo}</span>
+                </div>
             `;
             resDiv.style.display = 'block';
             resDiv.scrollIntoView({ behavior: 'smooth', block: 'start' });
         } else {
-            alert("El folio no se encuentra en nuestra base de datos. Verifique los dígitos.");
+            alert("El folio no se encuentra en nuestra base de datos.");
             resDiv.style.display = 'none';
         }
     }
@@ -231,11 +238,8 @@
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
-    // LISTENER PARA TECLA ENTER
     document.getElementById('folioInput').addEventListener('keypress', function (e) {
-        if (e.key === 'Enter') {
-            buscar();
-        }
+        if (e.key === 'Enter') buscar();
     });
 </script>
 
