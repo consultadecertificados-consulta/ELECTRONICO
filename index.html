@@ -6,34 +6,24 @@
     <title>Portal Mi Certificado En Línea - INEA</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
-        body { padding-top: 90px; background-color: #ffffff; font-family: 'Arial', sans-serif; }
-        .navbar { background-color: #285C4D !important; padding: 10px 0; }
+        body { padding-top: 70px; background-color: #ffffff; font-family: 'Arial', sans-serif; }
+        .navbar { background-color: #285C4D !important; }
         .btn-success { background-color: #285C4D !important; border-color: #285C4D !important; }
-        
         #DatosCertificado { display: none; margin-bottom: 50px; }
-        
         .card { border-radius: 0; border: 1px solid #ccc; box-shadow: none; }
-        .card-header { background-color: #fff !important; border-bottom: 2px solid #285C4D; padding: 20px; }
-        
-        .logo-certificado { height: 80px; width: auto; margin-bottom: 15px; }
-        
+        .card-header { background-color: #fff !important; border-bottom: 2px solid #285C4D; padding: 15px; }
+        .logo-nav { height: 40px; width: auto; margin-right: 10px; }
+        .logo-cert { height: 70px; width: auto; margin-bottom: 10px; }
         .table td { padding: 12px; border-bottom: 1px solid #eee; vertical-align: middle; }
         .table b { color: #333; }
-        
         #lblFolio { word-break: break-all; color: #333; font-weight: bold; font-family: monospace; }
-        
-        @media print {
-            .navbar, .btn-outline-secondary, footer, #Busqueda { display: none !important; }
-            body { padding-top: 0; }
-            .card { border: none; }
-        }
     </style>
 </head>
 <body>
     <nav class="navbar fixed-top navbar-dark">
-        <div class="container d-flex align-items-center">
-            <img src="logo.png" alt="Logo" onerror="this.src='https://via.placeholder.com/150x50?text=LOGO+INEA'" style="height: 40px;">
-            <a class="navbar-brand mb-0 h1" style="color: #FFFFFF; font-size: 1.2rem; margin-left: 15px;">Validación de certificados INEA</a>
+        <div class="container-fluid d-flex justify-content-center align-items-center">
+            <img src="logo.png" class="logo-nav" onerror="this.style.display='none'">
+            <a class="navbar-brand" style="color: #FFFFFF">Validación de certificados INEA</a>
         </div>
     </nav>
 
@@ -42,11 +32,11 @@
             <div class="row justify-content-center">
                 <div class="col-md-6">
                     <h2 class="mb-4">Validación de certificado</h2>
-                    <p class="text-muted">Ingresa el número de folio para confirmar la validez de tu certificado.</p>
+                    <p class="text-muted">Esta opción te permite confirmar los datos y la validez de tu certificado, para ello ingresa el número de folio en el recuadro de abajo y posteriormente da clic al botón de Verificar.</p>
                     <div class="card p-4">
                         <div class="text-start mb-3">
                             <b>Folio:</b>
-                            <input type="text" id="FolioInput" class="form-control form-control-lg" placeholder="Ej: 9da9226f..." />
+                            <input type="text" id="FolioInput" class="form-control form-control-lg" />
                         </div>
                         <button type="button" onclick="validarFolio()" class="btn btn-success btn-lg w-100">Verificar</button>
                     </div>
@@ -62,7 +52,7 @@
             </div>
             <div class="card">
                 <div class="card-header text-center">
-                    <img src="logo.png" class="logo-certificado" alt="Logo Oficial" onerror="this.style.display='none'">
+                    <img src="logo.png" class="logo-cert" onerror="this.style.display='none'"><br>
                     <h4 class="mb-0" style="color: #285C4D;">INSTITUTO NACIONAL PARA LA EDUCACIÓN DE LOS ADULTOS</h4>
                 </div>
                 <div class="card-body p-4">
@@ -71,13 +61,14 @@
                         <tr><td style="width: 45%;"><b>Nombre:</b></td><td><span id="lblNombre"></span></td></tr>
                         <tr><td><b>Nivel:</b></td><td><span id="lblNivel"></span></td></tr>
                         <tr><td><b>Promedio:</b></td><td><span id="lblPromedio"></span></td></tr>
-                        <tr><td><b>Fecha de conclusión:</b></td><td><span id="lblConclusion"></span></td></tr>
+                        <tr><td><b>Fecha de conclusión de estudios:</b></td><td><span id="lblConclusion"></span></td></tr>
                         <tr><td><b>Tipo de documento:</b></td><td>CERTIFICADO</td></tr>
                         <tr><td><b>Fecha de emisión:</b></td><td><span id="lblEmision"></span></td></tr>
                         <tr><td><b>Lugar de emisión:</b></td><td><span id="lblLugar"></span></td></tr>
                         <tr><td><b>Folio:</b></td><td><span id="lblFolio"></span></td></tr>
                         <tr><td><b>ID:</b></td><td><span id="lblID"></span></td></tr>
                         <tr><td><b>Autoridad educativa:</b></td><td>JORGE ALBERTO SANMIGUEL WONG, DIRECTOR GENERAL</td></tr>
+                        <tr><td><b>No. de certificado autoridad educativa:</b></td><td>00001000000519186162</td></tr>
                         <tr><td><b>Validación SIGED:</b></td><td><a href="https://aprendeinea.inea.gob.mx/" target="_blank">https://aprendeinea.inea.gob.mx/</a></td></tr>
                     </table>
                 </div>
@@ -90,9 +81,12 @@
     </footer>
 
     <script>
+        // Aquí puedes pegar tus 50 folios siguiendo este formato:
         const baseDatos = {
             "9da9226f-6e07-41cc-81f6-23cb903e6593": { nombre: "VIANNEY VILLARREAL COTA", nivel: "SECUNDARIA", promedio: "7.7", conclusion: "2024-11-24", emision: "2024-11-29", lugar: "CAMPECHE, CAMPECHE", id: "0410255274" },
-            "8ea8226f-5f07-41cc-81f6-23cb903e7500": { nombre: "CARLOS ALBERTO MEZA", nivel: "SECUNDARIA", promedio: "8.5", conclusion: "2024-10-15", emision: "2024-10-20", lugar: "CIUDAD DE MÉXICO", id: "0511255380" }
+            "8ea8226f-5f07-41cc-81f6-23cb903e7500": { nombre: "CARLOS ALBERTO MEZA", nivel: "SECUNDARIA", promedio: "8.5", conclusion: "2024-10-15", emision: "2024-10-20", lugar: "CIUDAD DE MÉXICO", id: "0511255380" },
+            "7ca7226f-4e07-21cc-81f6-01cb903e6570": { nombre: "BEATRIZ ELENA RIVAS", nivel: "PRIMARIA", promedio: "9.2", conclusion: "2025-01-10", emision: "2025-01-15", lugar: "MONTERREY, NL", id: "0612255490" }
+            // Continúa pegando aquí el resto hasta completar los 50...
         };
 
         function validarFolio() {
@@ -123,3 +117,4 @@
     </script>
 </body>
 </html>
+        
