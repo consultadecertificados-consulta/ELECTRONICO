@@ -30,7 +30,6 @@
             min-height: 100vh;
         }
 
-        /* Navegación Superior Estilo gob.mx */
         nav.gob-header {
             background-color: #0B231E;
             padding: 10px 50px;
@@ -44,7 +43,6 @@
 
         .barra-oro { background-color: var(--gob-guinda); height: 8px; border-bottom: 3px solid var(--gob-oro); }
 
-        /* Contenido Principal */
         main { flex: 1; max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; width: 100%; }
 
         .titulos-sep { margin-bottom: 30px; font-family: 'Montserrat', sans-serif; }
@@ -89,7 +87,6 @@
             font-family: 'Montserrat', sans-serif; cursor: pointer;
         }
 
-        /* Resultados */
         #resultado { 
             display: none; margin-top: 40px; text-align: left; background: white; 
             padding: 30px; border-radius: 8px; border: 1px solid #ddd;
@@ -110,7 +107,6 @@
             color: white; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 12px;
         }
 
-        /* Footer Estilo gob.mx Corregido */
         footer { background-color: #13322B; color: white; padding: 50px 0 20px 0; font-family: 'Montserrat', sans-serif; }
         .footer-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding: 0 20px; }
         .footer-col h4 { font-size: 16px; margin-bottom: 20px; border-bottom: 1px solid var(--gob-oro); display: inline-block; padding-bottom: 5px; }
@@ -202,72 +198,44 @@
 
 <script>
     const baseDatos = {
-        "CBG3760391150": { nombre: "LORENZO ANTONIO MARTINEZ DAMASIO", matricula: "1501R850623", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE MORELOS", plantel: "08EEX0001S", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-11 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG376039115": { nombre: "THARSIS URIEL TEQUIHUATLE CASTRO", matricula: "1502M900412", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO NUEVO LEON", plantel: "19EEX0001Y", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "19-09-2025 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391155": { nombre: "AURELIANO GONZALEZ SABINO", matricula: "1503R880155", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CIUDAD DE MEXICO" , plan: "BACHILLERATO GENERAL EN LINEA", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "23-05-2023 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391153": { nombre: "LUIS ANGEL GONZALEZ SANCHEZ", matricula: "1501R85O623", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE MORELIA MICHOACAN", plantel: "16EEX0001A", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-11 14:09:35", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391157": { nombre: "LISSET ESCOBAR SANCHEZ", matricula: "1505R890789", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE OAXACA", plantel: "20EEX0001N", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-18 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391158": { nombre: "MAURICIO REQUENA MAYORGA", matricula: "1506M850221", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE SAN LUIS POTOSI", plantel: "24DIT0020Z", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391100": { nombre: "VICTOR MANUEL SANCHEZ MARTINEZ", matricula: "1507R910884", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE CHIAPAS", plantel: "07EEX0001T", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391160": { nombre: "FERNANDA PEREZ GOMEZ", matricula: "1508M870662", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE GUADALAJARA", plantel: "14EEX0001C", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391161": { nombre: "SOFIA REYES PALACIOS", matricula: "1509R930112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-13 10:05:33", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391162": { nombre: "MIGUEL ANGEL FLORES", matricula: "1510M840995", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.3", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-13 12:40:02", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391163": { nombre: "ELENA GOMEZ ESTRADA", matricula: "1511R900334", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.0", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 09:12:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391164": { nombre: "JAVIER MORALES PEÑA", matricula: "1512M920556", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "7.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 11:30:45", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391165": { nombre: "VALERIA SOSA CASTRO", matricula: "1513R880778", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CEB 8/2", plan: "BACHILLERATO GENERAL", promedio: "8.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 14:15:20", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391166": { nombre: "HUGO SANCHEZ MEZA", matricula: "1514M860223", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-15 10:00:05", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391167": { nombre: "CLAUDIA RIVAS LUNA", matricula: "1515R910445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-15 12:45:50", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391168": { nombre: "OSCAR TELLEZ URIBE", matricula: "1516M890112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CEB 1/1", plan: "BACHILLERATO GENERAL", promedio: "7.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-16 09:30:15", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391169": { nombre: "PATRICIA VEGA MAR", matricula: "1517R930889", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-16 11:20:40", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391170": { nombre: "FERNANDO DURAN O.", matricula: "1518M850667", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-17 10:15:00", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391171": { nombre: "GABRIELA SALAS K.", matricula: "1519R880332", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.9", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-17 13:50:25", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391172": { nombre: "JORGE LUIS LOPEZ CRUZ", matricula: "1520M920991", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "PREPARATORIA ABIERTA", plan: "BACHILLERATO GENERAL", promedio: "8.2", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-12-18 08:55:10", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" }
-    };
+        "CBG3760391150": { nombre: "LORENZO ANTONIO MARTINEZ DAMASIO", matricula: "1501R850623", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE MORELOS", plantel: "08EEX0001S", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-11 16:20:11" },
+        "CBG376039115": { nombre: "THARSIS URIEL TEQUIHUATLE CASTRO", matricula: "1502M900412", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO NUEVO LEON", plantel: "19EEX0001Y", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "19-09-2025 16:20:11" },
+        "CBG3760391155": { nombre: "AURELIANO GONZALEZ SABINO", matricula: "1503R880155", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CIUDAD DE MEXICO" , plan: "BACHILLERATO GENERAL EN LINEA", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "23-05-2023 16:20:11" },
+        "CBG3760391153": { nombre: "LUIS ANGEL GONZALEZ SANCHEZ", matricula: "1501R85O623", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE MORELIA MICHOACAN", plantel: "16EEX0001A", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-11 14:09:35" },
+        "CBG3760391157": { nombre: "LISSET ESCOBAR SANCHEZ", matricula: "1505R890789", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE OAXACA", plantel: "20EEX0001N", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-18 16:20:11" },
+        "CBG3760391158": { nombre: "MAURICIO REQUENA MAYORGA", matricula: "1506M850221", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE SAN LUIS POTOSI", plantel: "24DIT0020Z", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11" },
+        "CBG3760391100": { nombre: "VICTOR MANUEL SANCHEZ MARTINEZ", matricula: "1507R910884", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE CHIAPAS", plantel: "07EEX0001T", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11" },
+        "CBG3760391160": { nombre: "FERNANDA PEREZ GOMEZ", matricula: "1508M870662", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE GUADALAJARA", plantel: "14EEX0001C", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
+        "CBG3760391161": { nombre: "SOFIA REYES PALACIOS", matricula: "1509R930112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-13 10:05:33" },
+        "CBG3760391162": { nombre: "MIGUEL ANGEL FLORES", matricula: "1510M840995", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.3", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-13 12:40:02" },
+        "CBG3760391163": { nombre: "ELENA GOMEZ ESTRADA", matricula: "1511R900334", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.0", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 09:12:11" },
+        "CBG3760391164": { nombre: "JAVIER MORALES PEÑA", matricula: "1512M920556", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "7.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 11:30:45" },
+        "CBG3760391165": { nombre: "VALERIA SOSA CASTRO", matricula: "1513R880778", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CEB 8/2", plan: "BACHILLERATO GENERAL", promedio: "8.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 14:15:20" },
+        "CBG3760391166": { nombre: "HUGO SANCHEZ MEZA", matricula: "1514M860223", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-15 10:00:05" },
+        "CBG3760391167": { nombre: "CLAUDIA RIVAS LUNA", matricula: "1515R910445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-15 12:45:50" },
+        "CBG3760391168": { nombre: "OSCAR TELLEZ URIBE", matricula: "1516M890112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CEB 1/1", plan: "BACHILLERATO GENERAL", promedio: "7.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-16 09:30:15" },
+        "CBG3760391169": { nombre: "PATRICIA VEGA MAR", matricula: "1517R930889", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-16 11:20:40" },
+        "CBG3760391170": { nombre: "FERNANDO DURAN O.", matricula: "1518M850667", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-17 10:15:00" },
+        "CBG3760391171": { nombre: "GABRIELA SALAS K.", matricula: "1519R880332", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.9", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-17 13:50:25" },
+        "CBG3760391172": { nombre: "JORGE LUIS LOPEZ CRUZ", matricula: "1520M920991", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "PREPARATORIA ABIERTA", plan: "BACHILLERATO GENERAL", promedio: "8.2", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-12-18 08:55:10" },
 
-    function buscar() {
-        const folio = document.getElementById('folioInput').value.trim().toUpperCase();
-        const resDiv = document.getElementById('resultado');
-        const detalle = document.getElementById('infoDetalle');
-
-        if (!folio) {
-            alert("Por favor, ingrese un folio.");
-            return;
-        }
-
-        if (baseDatos[folio]) {
-            const d = baseDatos[folio];
-            detalle.innerHTML = `
-                <div class="info-item"><span class="info-label">Nombre del Alumno:</span> <span class="info-value">${d.nombre}</span></div>
-                <div class="info-item"><span class="info-label">Matrícula:</span> <span class="info-value">${d.matricula}</span></div>
-                <div class="info-item"><span class="info-label">Plan Académico:</span> <span class="info-value">${d.plan}</span></div>
-                <div class="info-item"><span class="info-label">Folio de Control:</span> <span class="info-value">${folio}</span></div>
-                <div class="info-item"><span class="info-label">Promedio Final:</span> <span class="info-value">${d.promedio}</span></div>
-                <div class="info-item"><span class="info-label">Créditos Totales:</span> <span class="info-value">${d.creditos}</span></div>
-                <div class="info-item"><span class="info-label">Estatus:</span> <span class="badge-registro">${d.estatus}</span></div>
-                <div class="info-item"><span class="info-label">Fecha de Validación:</span> <span class="info-value">${d.timbrado}</span></div>
-                <div class="info-item" style="grid-column: span 2;">
-                    <span class="info-label">Institución / Plantel:</span> 
-                    <span class="info-value">${d.plantel} - ${d.emisor}</span>
-                </div>
-            `;
-            resDiv.style.display = 'block';
-            resDiv.scrollIntoView({ behavior: 'smooth', block: 'center' });
-        } else {
-            alert("No se encontró el folio en el Registro Nacional.");
-            resDiv.style.display = 'none';
-        }
-    }
-
-    function restablecer() {
-        document.getElementById('folioInput').value = "";
-        document.getElementById('resultado').style.display = 'none';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    document.getElementById('folioInput').addEventListener('keypress', (e) => {
-        if (e.key === 'Enter') buscar();
-    });
-</script>
-
-</body>
-</html>
+        // --- 40 FOLIOS ADICIONALES ---
+        "CBG3760391173": { nombre: "MARIANA SOSA VILLA", matricula: "1521R900445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.2", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-01 10:20:00" },
+        "CBG3760391174": { nombre: "RAUL IVAN MENDEZ", matricula: "1522M880112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.0", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-01 11:45:10" },
+        "CBG3760391175": { nombre: "SILVIA LUZ REYES", matricula: "1523R850667", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-02 09:10:00" },
+        "CBG3760391176": { nombre: "ALBERTO DIAZ PAZ", matricula: "1524M930889", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "7.9", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-02 12:30:45" },
+        "CBG3760391177": { nombre: "IRENE RIVAS GIL", matricula: "1525R910445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.5", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-03 10:05:22" },
+        "CBG3760391178": { nombre: "ENRIQUE SOSA LARA", matricula: "1526M890112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.1", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-03 14:12:00" },
+        "CBG3760391179": { nombre: "LUCIA MEZA CALDERA", matricula: "1527R850667", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.3", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-04 09:55:30" },
+        "CBG3760391180": { nombre: "GUSTAVO ADOLFO REY", matricula: "1528M930889", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "7.6", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-04 11:20:00" },
+        "CBG3760391181": { nombre: "DANIELA LARA TELLEZ", matricula: "1529R910445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.9", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-05 10:40:15" },
+        "CBG3760391182": { nombre: "OSCAR IVAN VEGA", matricula: "1530M890112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-05 13:00:55" },
+        "CBG3760391183": { nombre: "MONICA PAZ DUARTE", matricula: "1531R850667", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-06 09:22:00" },
+        "CBG3760391184": { nombre: "ROBERTO PENA RUIZ", matricula: "1532M930889", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.2", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-06 12:15:33" },
+        "CBG3760391185": { nombre: "ESTELA CASTRO MAR", matricula: "1533R910445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.0", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-07 10:00:10" },
+        "CBG3760391186": { nombre: "HUGO SOSA MENDOZA", matricula: "1534M890112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "7.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-07 14:40:00" },
+        "CBG3760391187": { nombre: "PATRICIA MAR VALDEZ", matricula: "1535R850667", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-08 09:10:45" },
+        "CBG3760391188": { nombre: "ALBERTO ORTIZ LIMA", matricula: "1536M930889", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.1", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-08 11:55:00" },
+        "CBG3760391189": { nombre: "SILVIA VEGA MENA", matricula: "1537R910445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-09 10:25:20" },
+        "CBG3760391190": { nombre: "GUSTAVO RUIZ OSORIO", matricula: "1538M890112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "7.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-04-09 14:12:00" },
+        "CBG3760391191": {
