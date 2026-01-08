@@ -42,7 +42,20 @@
         .nav-links-gob { display: flex; gap: 20px; list-style: none; }
         .nav-links-gob a { color: white; text-decoration: none; font-size: 14px; font-family: 'Montserrat', sans-serif; }
 
-        .barra-oro { background-color: var(--gob-guinda); height: 8px; border-bottom: 3px solid var(--gob-oro); }
+        /* NUEVO: Contenedor para logo.png */
+        .header-image-container { 
+            width: 100%; 
+            height: auto; 
+            border-bottom: 8px solid var(--gob-oro); 
+            background: #fff;
+        }
+        .header-image-container img { 
+            width: 100%; 
+            height: auto; 
+            display: block; 
+        }
+
+        .barra-oro { background-color: var(--gob-guinda); height: 8px; }
 
         /* Contenido Principal */
         main { flex: 1; max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; width: 100%; }
@@ -137,7 +150,12 @@
         <li><a href="https://www.gob.mx/busqueda"><i class="fas fa-search"></i></a></li>
     </ul>
 </nav>
-<div class="barra-oro"></div>
+
+<div class="header-image-container">
+    <a href="index.html">
+        <img src="logo.png" alt="Registro Nacional de Profesionistas">
+    </a>
+</div>
 
 <main>
     <div class="titulos-sep">
@@ -203,7 +221,6 @@
 <script src="folios.js"></script>
 
 <script>
-    // Función centralizada para mostrar datos
     function ejecutarBusqueda(folioKey) {
         if (!folioKey) return;
         
@@ -235,7 +252,6 @@
         }
     }
 
-    // Vinculación con los botones del HTML
     function buscar() {
         const folio = document.getElementById('folioInput').value;
         if (!folio) {
@@ -249,13 +265,11 @@
         document.getElementById('folioInput').value = "";
         document.getElementById('resultado').style.display = 'none';
         window.scrollTo({ top: 0, behavior: 'smooth' });
-        // Limpiar URL
         if(window.location.search) {
             window.history.replaceState({}, document.title, window.location.pathname);
         }
     }
 
-    // Lógica para QR (Lee el parámetro ?folio= de la URL)
     window.onload = function() {
         const urlParams = new URLSearchParams(window.location.search);
         const folioQR = urlParams.get('folio');
