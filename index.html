@@ -200,39 +200,16 @@
     </div>
 </footer>
 
-<script>
-    const baseDatos = {
-        "CBG3760391150": { nombre: "LORENZO ANTONIO MARTINEZ DAMASIO", matricula: "1501R850623", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE MORELOS", plantel: "08EEX0001S", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-11 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG376039115": { nombre: "THARSIS URIEL TEQUIHUATLE CASTRO", matricula: "1502M900412", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO NUEVO LEON", plantel: "19EEX0001Y", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "19-09-2025 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391155": { nombre: "AURELIANO GONZALEZ SABINO", matricula: "1503R880155", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CIUDAD DE MEXICO" , plan: "BACHILLERATO GENERAL EN LINEA", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "23-05-2023 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391153": { nombre: "LUIS ANGEL GONZALEZ SANCHEZ", matricula: "1501R85O623", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE MORELIA MICHOACAN", plantel: "16EEX0001A", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-11 14:09:35", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391157": { nombre: "LISSET ESCOBAR SANCHEZ", matricula: "1505R890789", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE OAXACA", plantel: "20EEX0001N", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-18 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391158": { nombre: "MAURICIO REQUENA MAYORGA", matricula: "1506M850221", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE SAN LUIS POTOSI", plantel: "24DIT0020Z", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391100": { nombre: "VICTOR MANUEL SANCHEZ MARTINEZ", matricula: "1507R910884", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE CHIAPAS", plantel: "07EEX0001T", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391160": { nombre: "FERNANDA PEREZ GOMEZ", matricula: "1508M870662", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE GUADALAJARA", plantel: "14EEX0001C", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391161": { nombre: "SOFIA REYES PALACIOS", matricula: "1509R930112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-13 10:05:33", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391162": { nombre: "MIGUEL ANGEL FLORES", matricula: "1510M840995", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.3", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-13 12:40:02", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391163": { nombre: "ELENA GOMEZ ESTRADA", matricula: "1511R900334", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.0", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 09:12:11", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391164": { nombre: "JAVIER MORALES PEÑA", matricula: "1512M920556", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "7.8", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 11:30:45", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391165": { nombre: "VALERIA SOSA CASTRO", matricula: "1513R880778", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CEB 8/2", plan: "BACHILLERATO GENERAL", promedio: "8.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-14 14:15:20", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391166": { nombre: "HUGO SANCHEZ MEZA", matricula: "1514M860223", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-15 10:00:05", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391167": { nombre: "CLAUDIA RIVAS LUNA", matricula: "1515R910445", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-15 12:45:50", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391168": { nombre: "OSCAR TELLEZ URIBE", matricula: "1516M890112", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "CEB 1/1", plan: "BACHILLERATO GENERAL", promedio: "7.7", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-16 09:30:15", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391169": { nombre: "PATRICIA VEGA MAR", matricula: "1517R930889", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-16 11:20:40", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391170": { nombre: "FERNANDO DURAN O.", matricula: "1518M850667", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "8.4", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-17 10:15:00", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391171": { nombre: "GABRIELA SALAS K.", matricula: "1519R880332", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "DGB", plan: "BACHILLERATO GENERAL", promedio: "9.9", creditos: "176", estatus: "REGISTRADO", timbrado: "2025-03-17 13:50:25", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" },
-        "CBG3760391172": { nombre: "JORGE LUIS LOPEZ CRUZ", matricula: "1520M920991", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "PREPARATORIA ABIERTA", plan: "BACHILLERATO GENERAL", promedio: "8.2", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-12-18 08:55:10", correo: "controlescolar.estatal@sems.sidgbe.gob.mx" }
-    };
+<script src="folios.js"></script>
 
-    function buscar() {
-        const folio = document.getElementById('folioInput').value.trim().toUpperCase();
+<script>
+    // Función centralizada para mostrar datos
+    function ejecutarBusqueda(folioKey) {
+        if (!folioKey) return;
+        
+        const folio = folioKey.trim().toUpperCase();
         const resDiv = document.getElementById('resultado');
         const detalle = document.getElementById('infoDetalle');
-
-        if (!folio) {
-            alert("Por favor, ingrese un folio.");
-            return;
-        }
 
         if (baseDatos[folio]) {
             const d = baseDatos[folio];
@@ -258,11 +235,36 @@
         }
     }
 
+    // Vinculación con los botones del HTML
+    function buscar() {
+        const folio = document.getElementById('folioInput').value;
+        if (!folio) {
+            alert("Por favor, ingrese un folio.");
+            return;
+        }
+        ejecutarBusqueda(folio);
+    }
+
     function restablecer() {
         document.getElementById('folioInput').value = "";
         document.getElementById('resultado').style.display = 'none';
         window.scrollTo({ top: 0, behavior: 'smooth' });
+        // Limpiar URL
+        if(window.location.search) {
+            window.history.replaceState({}, document.title, window.location.pathname);
+        }
     }
+
+    // Lógica para QR (Lee el parámetro ?folio= de la URL)
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const folioQR = urlParams.get('folio');
+        
+        if (folioQR) {
+            document.getElementById('folioInput').value = folioQR.toUpperCase();
+            ejecutarBusqueda(folioQR);
+        }
+    };
 
     document.getElementById('folioInput').addEventListener('keypress', (e) => {
         if (e.key === 'Enter') buscar();
