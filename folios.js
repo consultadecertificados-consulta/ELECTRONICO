@@ -13,7 +13,7 @@ const baseDatos = {
     "CBG3760391172": { nombre: "JORGE LUIS LOPEZ CRUZ", matricula: "1520M920991", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "PREPARATORIA ABIERTA", plan: "BACHILLERATO GENERAL", promedio: "8.2", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-12-18 08:55:10" },
 
     // --- 50 FOLIOS ADICIONALES (CBG-200 AL CBG-249) ---
-    "CBG3760391200": { nombre: "ADRIANA MEZA VILLALOBOS", matricula: "1601R940221", emisor: "DGB CIUDAD DE MÉXICO", plantel: "09EEX0002F", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-05 09:15:22" },
+    "CBG3760391200": { nombre: "JOSE HUMBERTO GONZALEZ LOPEZ", matricula: "1601R940221", emisor: "DGB SAN LUIS POTOSI", plantel: "24DIT0020Z", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2028-10-25 16:20:11" },
     "CBG3760391201": { nombre: "RODRIGO ALCALA RUIZ", matricula: "1602M930554", emisor: "DGB JALISCO", plantel: "14EEX0045G", plan: "BACHILLERATO GENERAL", promedio: "8.4", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-05 10:30:45" },
     "CBG3760391202": { nombre: "PATRICIA LUNA SOLIS", matricula: "1603R920887", emisor: "DGB NUEVO LEÓN", plantel: "19DEX0102K", plan: "BACHILLERATO GENERAL", promedio: "9.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-06 11:12:05" },
     "CBG3760391203": { nombre: "MANUEL ORTIZ PEÑA", matricula: "1604M910110", emisor: "DGB PUEBLA", plantel: "21EEX0023M", plan: "BACHILLERATO GENERAL", promedio: "7.9", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-06 14:45:30" },
@@ -63,4 +63,5 @@ const baseDatos = {
     "CBG3760391247": { nombre: "JULIETA VENEGAS P.", matricula: "1648M470772", emisor: "DGB BAJA CALIFORNIA", plantel: "02EEX0088V", plan: "BACHILLERATO GENERAL", promedio: "8.0", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-28 12:40:44" },
     "CBG3760391248": { nombre: "KEVIN ROLDÁN S.", matricula: "1649R460115", emisor: "DGB TABASCO", plantel: "27DEX0055N", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-29 13:50:55" },
     "CBG3760391249": { nombre: "LUCERO HOZANZA M.", matricula: "1650M450448", emisor: "DGB MORELOS", plantel: "17EEX0011C", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-29 16:15:33" }
+
 };
