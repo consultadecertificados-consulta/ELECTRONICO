@@ -10,7 +10,7 @@ const baseDatos = {
     "CBG3760391100": { nombre: "VICTOR MANUEL SANCHEZ MARTINEZ", matricula: "1507R910884", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE CHIAPAS", plantel: "07EEX0001T", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11" },
     "CBG3760391160": { nombre: "FERNANDA PEREZ GOMEZ", matricula: "1508M870662", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE GUADALAJARA", plantel: "14EEX0001C", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391161": { nombre: "NORMA PATRICIA NAVARRO ZACARIAS", matricula: "1509R930112", emisor: "DIRECCIÓN GENERAL DE LEON, GUANAJUATO", plantel: "11DEX0015J", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-10-25 16:20:11" },
-    "CBG3760391172": { nombre: "JORGE LUIS LOPEZ CRUZ", matricula: "1520M920991", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO", plantel: "PREPARATORIA ABIERTA", plan: "BACHILLERATO GENERAL", promedio: "8.2", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-12-18 08:55:10" },
+    "CBG3760391172": { nombre: "ANA KAREN CARBALLO MENDOZA ", matricula: "1520M920991", emisor: "DIRECCIÓN GENERAL DE BACHILLERATO DE CHIAPAS", plantel: "24DIT0020Z", plan: "BACHILLERATO GENERAL", promedio: "9.0", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
 
     // --- 50 FOLIOS ADICIONALES (CBG-200 AL CBG-249) ---
     "CBG3760391200": { nombre: "JOSE HUMBERTO GONZALEZ LOPEZ", matricula: "1601R940221", emisor: "DGB SAN LUIS POTOSI", plantel: "24DIT0020Z", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2028-10-25 16:20:11" },
@@ -65,4 +65,5 @@ const baseDatos = {
     "CBG3760391249": { nombre: "LUCERO HOZANZA M.", matricula: "1650M450448", emisor: "DGB MORELOS", plantel: "17EEX0011C", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-29 16:15:33" }
 
 };
+
 
