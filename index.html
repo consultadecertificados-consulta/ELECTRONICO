@@ -30,6 +30,33 @@
             min-height: 100vh;
         }
 
+        /* --- ESTILOS ACCESIBILIDAD (SEGÚN IMAGEN) --- */
+        .acc-panel-sidebar {
+            position: fixed; left: -320px; top: 0; width: 300px; height: 100vh;
+            background: #EAEAEA; z-index: 9999; transition: 0.3s ease;
+            padding: 20px 15px; font-family: 'Montserrat', sans-serif;
+            box-shadow: 2px 0 10px rgba(0,0,0,0.2); overflow-y: auto;
+        }
+        .acc-panel-sidebar.active { left: 0; }
+        .acc-trigger {
+            position: fixed; left: 0; top: 50%; transform: translateY(-50%);
+            background: var(--gob-guinda-claro); color: white; padding: 15px 10px;
+            border-radius: 0 5px 5px 0; cursor: pointer; z-index: 10000;
+        }
+        .acc-item { display: flex; align-items: center; margin-bottom: 12px; cursor: pointer; color: #B37185; font-size: 13px; font-weight: 600; line-height: 1.2; }
+        .acc-icon-box {
+            width: 45px; height: 45px; background: #C28497; border-radius: 8px;
+            display: flex; align-items: center; justify-content: center;
+            margin-right: 15px; color: white; font-size: 20px; flex-shrink: 0;
+        }
+        .acc-reset-btn {
+            background: var(--gob-guinda-claro); color: white; display: flex; align-items: center;
+            padding: 12px; border-radius: 8px; margin-bottom: 25px; cursor: pointer; font-weight: bold;
+        }
+        /* Funciones visuales */
+        .grayscale-mode { filter: grayscale(100%); }
+        .dyslexic-mode { font-family: 'OpenDyslexic', sans-serif !important; }
+
         /* Navegación Superior Estilo gob.mx */
         nav.gob-header {
             background-color: #0B231E;
@@ -42,7 +69,6 @@
         .nav-links-gob { display: flex; gap: 20px; list-style: none; }
         .nav-links-gob a { color: white; text-decoration: none; font-size: 14px; font-family: 'Montserrat', sans-serif; }
 
-        /* NUEVO: Contenedor para logo.png */
         .header-image-container { 
             width: 100%; 
             height: auto; 
@@ -57,7 +83,6 @@
 
         .barra-oro { background-color: var(--gob-guinda); height: 8px; }
 
-        /* Contenido Principal */
         main { flex: 1; max-width: 1000px; margin: 40px auto; padding: 0 20px; text-align: center; width: 100%; }
 
         .titulos-sep { margin-bottom: 30px; font-family: 'Montserrat', sans-serif; }
@@ -102,7 +127,6 @@
             font-family: 'Montserrat', sans-serif; cursor: pointer;
         }
 
-        /* Resultados */
         #resultado { 
             display: none; margin-top: 40px; text-align: left; background: white; 
             padding: 30px; border-radius: 8px; border: 1px solid #ddd;
@@ -123,7 +147,6 @@
             color: white; padding: 3px 10px; border-radius: 4px; font-weight: 700; font-size: 12px;
         }
 
-        /* Footer Estilo gob.mx Corregido */
         footer { background-color: #13322B; color: white; padding: 50px 0 20px 0; font-family: 'Montserrat', sans-serif; }
         .footer-container { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px; padding: 0 20px; }
         .footer-col h4 { font-size: 16px; margin-bottom: 20px; border-bottom: 1px solid var(--gob-oro); display: inline-block; padding-bottom: 5px; }
@@ -139,6 +162,22 @@
     </style>
 </head>
 <body>
+
+<div class="acc-trigger" onclick="document.getElementById('accPanel').classList.toggle('active')">
+    <i class="fas fa-universal-access fa-2x"></i>
+</div>
+
+<div id="accPanel" class="acc-panel-sidebar">
+    <div class="acc-reset-btn" onclick="resetAcc()"><i class="fas fa-undo-alt" style="margin-right:15px"></i> Restablecer</div>
+    <div class="acc-item" onclick="document.body.classList.toggle('grayscale-mode')"><div class="acc-icon-box"><i class="fas fa-adjust"></i></div> Cambiar escala de grises</div>
+    <div class="acc-item"><div class="acc-icon-box"><i class="fas fa-ear-listen"></i></div> Usar un lector de pantalla</div>
+    <div class="acc-item"><div class="acc-icon-box"><i class="fas fa-mouse-pointer"></i></div> Cambiar tamaño de cursor</div>
+    <div class="acc-item"><div class="acc-icon-box"><i class="fas fa-palette"></i></div> Cambiar el contraste de color</div>
+    <div class="acc-item"><div class="acc-icon-box"><i class="fas fa-equals"></i></div> Mascara de lectura</div>
+    <div class="acc-item"><div class="acc-icon-box"><i class="fas fa-underline"></i></div> Guia de Lectura</div>
+    <div class="acc-item" onclick="document.body.classList.toggle('dyslexic-mode')"><div class="acc-icon-box"><i class="fas fa-italic"></i></div> Cambio de tipografia dislexia</div>
+    <div class="acc-item"><div class="acc-icon-box"><i class="fas fa-arrows-alt-v"></i></div> Espaciado vertical</div>
+</div>
 
 <nav class="gob-header">
     <a href="https://www.gob.mx">
@@ -221,6 +260,12 @@
 <script src="folios.js"></script>
 
 <script>
+    // FUNCIONES ACCESIBILIDAD
+    function resetAcc() {
+        document.body.classList.remove('grayscale-mode', 'dyslexic-mode');
+    }
+
+    // FUNCIONES DE BÚSQUEDA ORIGINALES
     function ejecutarBusqueda(folioKey) {
         if (!folioKey) return;
         
