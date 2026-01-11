@@ -16,7 +16,7 @@ const baseDatos = {
     "CBG3760391200": { nombre: "JOSE HUMBERTO GONZALEZ LOPEZ", matricula: "1601R940221", emisor: "DGB SAN LUIS POTOSI", plantel: "24DIT0020Z", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2028-10-25 16:20:11" },
     "CBG3760391201": { nombre: "JOSUE DE JESUS LOPEZ PEREZ", matricula: "1602M930554", emisor: "DIRECCION GENERAL DE BACHILLERATO DE JALISCO", plantel: "14EEX0001C", plan: "BACHILLERATO GENERAL INTENSIVO", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391202": { nombre: "URIVA SEMAYA YASEN JIMENEZ VILLALOBOS", matricula: "1603R920887", emisor: "DIRECCION GENERAL DE BACHILLERATO DE GUADALAJARA , JALISCO", plantel: "14EEX0001C", plan: "BACHILLERATO INTESIVO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
-    "CBG3760391203": { nombre: "RAMON LEONARDO RODRIGUEZ GONZALEZ", matricula: "1604M910110", emisor: "DIRECCION GENERAL DE BACHILLERATO DE COAHUILA", plantel: "05EEX0001V", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
+    "CBG3700391003": { nombre: "RAMON LEONARDO RODRIGUEZ GONZALEZ", matricula: "1604M910110", emisor: "DIRECCION GENERAL DE BACHILLERATO DE COAHUILA", plantel: "05EEX0001V", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391204": { nombre: "ROSA JAQUELYNE RENTERIA RAMIREZ", matricula: "1605R900443", emisor: "COORDINACION ESTATAL DE BACHILLERATO REGIONAL DE TALA", plantel: "14UBH0092N", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391205": { nombre: "ANGELICA MARIA ENRIQUEZ MENDIOLA", matricula: "1606M890776", emisor: "COORDINACION ESTATAL DE PREPARATORIA MEDIA SUPERIOR Y SUPERIOR DE VERACRUZ", plantel: "30EEX0002T", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391206": { nombre: "GUADALUPE SELENA GONZALEZ LOPEZ", matricula: "1607R880229", emisor: "COORDINACION ESTATAL DE PREPARATORIA ABIERTA SUPERIOR Y MEDIA SUPERIOR DE VERACRUZ", plantel: "30EEX0002T", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
@@ -65,6 +65,7 @@ const baseDatos = {
     "CBG3760391249": { nombre: "LUCERO HOZANZA M.", matricula: "1650M450448", emisor: "DGB MORELOS", plantel: "17EEX0011C", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-29 16:15:33" }
 
 };
+
 
 
 
