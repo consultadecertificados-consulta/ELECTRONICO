@@ -14,6 +14,13 @@
             --gob-oro: #9D843E;   
             --gob-gris-boton: #757575;
             --estatus-verde: #235E3F;
+            /* COLORES DE LAS TARJETAS SEGÚN IMAGEN */
+            --bg-verde-tarjeta: #E3F2E1;
+            --border-verde-tarjeta: #B7D9B1;
+            --texto-verde-tarjeta: #3D7A34;
+            --bg-azul-tarjeta: #D9F0F7;
+            --border-azul-tarjeta: #ADE1F0;
+            --texto-azul-tarjeta: #316B8C;
         }
 
         /* ACCESIBILIDAD */
@@ -83,7 +90,6 @@
             width: 100%; max-width: 500px; padding: 15px; border: 2px solid #ddd; 
             border-radius: 6px; font-size: 18px; margin-bottom: 25px; text-align: center;
         }
-
         .button-group { display: flex; gap: 15px; justify-content: center; }
         .btn-buscar { background: var(--sep-rojo-obscuro); color: white; padding: 15px 40px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
         .btn-restablecer { background: var(--gob-gris-boton); color: white; padding: 15px 40px; border: none; border-radius: 6px; font-weight: 700; cursor: pointer; }
@@ -94,26 +100,50 @@
             border-radius: 8px; border-left: 8px solid var(--estatus-verde);
             box-shadow: 0 10px 30px rgba(0,0,0,0.1);
         }
-        .validacion-leyenda { border-bottom: 1px solid #eee; margin-bottom: 20px; padding-bottom: 15px; }
-        .validacion-leyenda h4 { color: var(--estatus-verde); font-family: 'Montserrat'; margin-bottom: 5px; font-size: 1.2rem; }
-        .validacion-leyenda p { color: #666; font-size: 0.95rem; }
+        .detalle-header {
+            font-family: 'Montserrat'; font-size: 1.3rem; border-bottom: 1px solid #eee;
+            padding-bottom: 10px; margin-bottom: 20px; position: relative;
+        }
+        .detalle-header::after {
+            content: ""; position: absolute; left: 0; bottom: -1px; width: 40px; height: 4px; background: var(--gob-oro);
+        }
 
-        .info-item { border-bottom: 1px solid #eee; padding: 12px 0; display: flex; justify-content: space-between; }
-        .info-label { font-weight: 700; color: #333; font-size: 12px; text-transform: uppercase; font-family: 'Montserrat'; }
-        .info-value { font-weight: 400; color: #555; font-size: 15px; text-align: right; }
-        .badge-registro { background: var(--estatus-verde); color: white; padding: 5px 12px; border-radius: 4px; font-weight: 700; }
+        .info-item { border-bottom: 1px solid #eee; padding: 12px 0; display: flex; flex-direction: column; }
+        .info-label { font-weight: 700; color: #333; font-size: 14px; font-family: 'Montserrat'; margin-bottom: 3px; }
+        .info-value { font-weight: 400; color: #555; font-size: 15px; }
 
-        /* FOOTER CON LINKS PRESERVADOS */
+        /* TARJETAS DISEÑO FINAL */
+        .cards-flex-container {
+            display: flex; justify-content: center; gap: 15px; margin: 25px 0; flex-wrap: wrap;
+        }
+        .card-box {
+            flex: 1; min-width: 200px; max-width: 280px; padding: 25px 15px;
+            border-radius: 4px; border: 1px solid; text-align: center; font-family: 'Montserrat', sans-serif;
+        }
+        .card-verde { background: var(--bg-verde-tarjeta); border-color: var(--border-verde-tarjeta); color: var(--texto-verde-tarjeta); }
+        .card-azul { background: var(--bg-azul-tarjeta); border-color: var(--border-azul-tarjeta); color: var(--texto-azul-tarjeta); }
+        
+        .card-box .title { font-weight: 700; font-size: 18px; margin-bottom: 12px; }
+        .card-box .val-big { font-size: 18px; font-weight: 400; margin-bottom: 5px; }
+        .card-box .val-text { font-weight: 700; font-size: 18px; }
+
+        .aviso-info {
+            background-color: #D9F0F7; border: 1px solid #ADE1F0; padding: 20px; border-radius: 4px;
+            margin-top: 30px; font-size: 14px; color: #316B8C; line-height: 1.5; font-family: 'Montserrat';
+        }
+
+        /* FOOTER COMPLETO ORIGINAL */
         footer { background: var(--sep-rojo-obscuro); color: white; padding: 50px 30px 20px; font-family: 'Montserrat'; margin-top: 50px; }
         .footer-container { max-width: 1000px; margin: 0 auto; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 40px; }
         .footer-col h4 { margin-bottom: 20px; border-bottom: 2px solid var(--gob-oro); display: inline-block; padding-bottom: 5px; }
         .footer-col a { color: white; text-decoration: none; display: block; margin-bottom: 10px; font-size: 13px; opacity: 0.8; }
+        .footer-col a:hover { opacity: 1; text-decoration: underline; }
         .footer-bottom { text-align: center; margin-top: 40px; padding-top: 20px; border-top: 1px solid rgba(255,255,255,0.1); font-size: 11px; }
 
         @media (max-width: 600px) {
             .button-group { flex-direction: column; }
-            .info-item { flex-direction: column; text-align: left; }
-            .info-value { text-align: left; margin-top: 5px; }
+            .cards-flex-container { flex-direction: column; align-items: center; }
+            .card-box { width: 100%; }
         }
     </style>
 </head>
@@ -133,6 +163,7 @@
     <ul class="nav-links-gob">
         <li><a href="https://www.gob.mx/tramites" target="_blank">Trámites</a></li>
         <li><a href="https://www.gob.mx/gobierno" target="_blank">Gobierno</a></li>
+        <li><a href="https://www.gob.mx/busqueda" target="_blank"><i class="fas fa-search"></i></a></li>
     </ul>
 </nav>
 
@@ -156,11 +187,12 @@
     </div>
 
     <div id="resultado">
-        <div class="validacion-leyenda">
-            <h4>Resultado de la Validación</h4>
-            <p>El documento ha sido localizado y autenticado exitosamente.</p>
-        </div>
+        <h2 class="detalle-header">Detalle del documento</h2>
         <div id="infoDetalle"></div>
+        <div class="cards-flex-container" id="tarjetasContainer"></div>
+        <div class="aviso-info">
+            <strong>¡Atención!</strong> La información de los certificados que se muestran en este portal, es el resultado de la integración de información que envían las autoridades educativas de los estados y de la Ciudad de México. En caso de que la información presentada no coincida con tu documento o no esté disponible, por favor ponte en contacto con la autoridad de tu centro escolar.
+        </div>
     </div>
 </main>
 
@@ -173,15 +205,20 @@
             <h4>Enlaces</h4>
             <a href="https://participa.gob.mx" target="_blank">Participa</a>
             <a href="https://www.gob.mx/publicaciones" target="_blank">Publicaciones</a>
+            <a href="http://www.ordenjuridico.gob.mx" target="_blank">Orden Jurídico PC</a>
+            <a href="https://pnt.org.mx" target="_blank">PNT</a>
         </div>
         <div class="footer-col">
-            <h4>Legal</h4>
-            <a href="https://www.gob.mx/privacidad" target="_blank">Privacidad</a>
-            <a href="https://www.gob.mx/terminos" target="_blank">Términos</a>
+            <h4>¿Qué es gob.mx?</h4>
+            <a href="https://www.gob.mx/que-es-gobmx" target="_blank">Es el portal único de trámites, información y participación ciudadana. Leer más</a>
+            <a href="https://datos.gob.mx" target="_blank">Portal de Datos Abiertos</a>
+            <a href="https://www.gob.mx/accesibilidad" target="_blank">Declaración de Accesibilidad</a>
+            <a href="https://www.gob.mx/privacidad" target="_blank">Aviso de Privacidad Integral</a>
         </div>
         <div class="footer-col">
             <h4>Contacto</h4>
             <a href="mailto:controlescolar.estatal@sems.sidgbe.gob.mx">Soporte Técnico</a>
+            <a href="https://www.gob.mx/que-es-gobmx" target="_blank">Denuncia contra servidores públicos</a>
         </div>
     </div>
     <div class="footer-bottom">SEP | SEMS | Registro Federal de Educación Media Superior | México 2026</div>
@@ -189,16 +226,6 @@
 
 <script src="folios.js"></script>
 <script>
-    // FUNCIÓN PARA CARGA AUTOMÁTICA POR ENLACE (?folio=...)
-    window.onload = function() {
-        const params = new URLSearchParams(window.location.search);
-        const folioUrl = params.get('folio');
-        if (folioUrl) {
-            document.getElementById('folioInput').value = folioUrl.trim().toUpperCase();
-            buscar();
-        }
-    }
-
     function toggleAccPanel() { document.getElementById('accPanel').classList.toggle('active'); }
     function toggleGrayscale() { document.body.classList.toggle('grayscale-mode'); }
     function toggleContrast() { document.body.classList.toggle('high-contrast'); }
@@ -206,23 +233,31 @@
     function resetAcc() { document.body.classList.remove('grayscale-mode', 'high-contrast', 'increase-text'); }
 
     function buscar() {
-        const f = document.getElementById('folioInput').value.trim().toUpperCase();
+        const input = document.getElementById('folioInput');
+        const f = input.value.trim().toUpperCase();
         const resDiv = document.getElementById('resultado');
         const detalle = document.getElementById('infoDetalle');
+        const tarjetas = document.getElementById('tarjetasContainer');
 
         if (typeof baseDatos !== 'undefined' && baseDatos[f]) {
             const d = baseDatos[f];
-            let content = "";
+            let listContent = "";
             for (let clave in d) {
-                let label = clave.replace(/_/g, ' ').toUpperCase();
-                let valor = d[clave];
-                if(clave.toLowerCase() === 'estatus') {
-                    content += `<div class="info-item"><span class="info-label">${label}:</span><span class="badge-registro">${valor}</span></div>`;
-                } else {
-                    content += `<div class="info-item"><span class="info-label">${label}:</span><span class="info-value">${valor}</span></div>`;
-                }
+                let claveL = clave.toLowerCase();
+                if (claveL === 'promedio' || claveL === 'promedio_texto' || claveL === 'estatus') continue;
+                listContent += `<div class="info-item"><span class="info-label">${clave.replace(/_/g, ' ')}:</span><span class="info-value">${d[clave]}</span></div>`;
             }
-            detalle.innerHTML = content;
+            tarjetas.innerHTML = `
+                <div class="card-box card-verde">
+                    <div class="title">Promedio:</div>
+                    <div class="val-big">${d.PROMEDIO || d.promedio || '0.0'}</div>
+                    <div class="val-text">${d.PROMEDIO_TEXTO || d.promedio_texto || ''}</div>
+                </div>
+                <div class="card-box card-azul">
+                    <div class="title">Estatus del documento:</div>
+                    <div class="val-text" style="font-weight:400; margin-top:15px;">${d.ESTATUS || d.estatus || 'Registrado'}</div>
+                </div>`;
+            detalle.innerHTML = listContent;
             resDiv.style.display = 'block';
             resDiv.scrollIntoView({ behavior: 'smooth' });
         } else if (f !== "") {
@@ -230,10 +265,18 @@
         }
     }
 
+    window.onload = function() {
+        const urlParams = new URLSearchParams(window.location.search);
+        const folioUrl = urlParams.get('folio');
+        if (folioUrl) {
+            document.getElementById('folioInput').value = folioUrl.trim().toUpperCase();
+            buscar();
+        }
+    }
+
     function restablecer() {
         document.getElementById('folioInput').value = "";
         document.getElementById('resultado').style.display = 'none';
-        document.getElementById('infoDetalle').innerHTML = "";
         window.history.replaceState({}, document.title, window.location.pathname);
     }
 </script>
