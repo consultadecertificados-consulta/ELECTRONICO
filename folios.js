@@ -17,7 +17,7 @@ const baseDatos = {
     "CBG3760391201": { nombre: "JOSUE DE JESUS LOPEZ PEREZ", matricula: "1602M930554", emisor: "DIRECCION GENERAL DE BACHILLERATO DE JALISCO", plantel: "14EEX0001C", plan: "BACHILLERATO GENERAL INTENSIVO", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391202": { nombre: "URIVA SEMAYA YASEN JIMENEZ VILLALOBOS", matricula: "1603R920887", emisor: "DIRECCION GENERAL DE BACHILLERATO DE GUADALAJARA , JALISCO", plantel: "14EEX0001C", plan: "BACHILLERATO INTESIVO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391203": { nombre: "RAMON LEONARDO RODRIGUEZ GONZALEZ", matricula: "1604M910110", emisor: "DIRECCION GENERAL DE BACHILLERATO DE COAHUILA", plantel: "05EEX0001V", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
-    "CBG3760391204": { nombre: "ELENA VARGAS MACHUCA", matricula: "1605R900443", emisor: "DGB QUERÉTARO", plantel: "22EEX0001A", plan: "BACHILLERATO GENERAL", promedio: "8.8", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-07 08:20:12" },
+    "CBG3760391204": { nombre: "ROSA JAQUELYNE RENTERIA RAMIREZ", matricula: "1605R900443", emisor: "COORDINACION ESTATAL DE BACHILLERATO REGIONAL DE TALA", plantel: "14UBH0092N", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391205": { nombre: "GABRIEL SOSA CASTRO", matricula: "1606M890776", emisor: "DGB VERACRUZ", plantel: "30DEX0451Z", plan: "BACHILLERATO GENERAL", promedio: "8.2", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-07 12:10:55" },
     "CBG3760391206": { nombre: "VERONICA DUARTE GIL", matricula: "1607R880229", emisor: "DGB YUCATÁN", plantel: "31EEX0005N", plan: "BACHILLERATO GENERAL", promedio: "9.3", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-08 16:35:18" },
     "CBG3760391207": { nombre: "HUGO RIVERA MENDOZA", matricula: "1608M870552", emisor: "DGB CHIHUAHUA", plantel: "08DEX0012L", plan: "BACHILLERATO GENERAL", promedio: "7.7", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-08 17:50:40" },
@@ -65,6 +65,7 @@ const baseDatos = {
     "CBG3760391249": { nombre: "LUCERO HOZANZA M.", matricula: "1650M450448", emisor: "DGB MORELOS", plantel: "17EEX0011C", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-29 16:15:33" }
 
 };
+
 
 
 
