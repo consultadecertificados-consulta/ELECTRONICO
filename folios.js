@@ -21,7 +21,7 @@ const baseDatos = {
     "CBG3760391205": { nombre: "ANGELICA MARIA ENRIQUEZ MENDIOLA", matricula: "1606M890776", emisor: "COORDINACION ESTATAL DE PREPARATORIA MEDIA SUPERIOR Y SUPERIOR DE VERACRUZ", plantel: "30EEX0002T", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391206": { nombre: "GUADALUPE SELENA GONZALEZ LOPEZ", matricula: "1607R880229", emisor: "COORDINACION ESTATAL DE PREPARATORIA ABIERTA SUPERIOR Y MEDIA SUPERIOR DE VERACRUZ", plantel: "30EEX0002T", plan: "BACHILLERATO GENERAL", promedio: "8.5", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-09-25 16:20:11" },
     "CBG3760391207": { nombre: "HUGO RIVERA MENDOZA", matricula: "1608M870552", emisor: "DGB CHIHUAHUA", plantel: "08DEX0012L", plan: "BACHILLERATO GENERAL", promedio: "7.7", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-08 17:50:40" },
-    "CBG3760391208": { nombre: "MARIA JOSÉ TELLO", matricula: "q111111111", emisor: "DGB ESTADO DE MÉXICO", plantel: "15EEX0201Q", plan: "BACHILLERATO GENERAL", promedio: "9.0", Periodo: "04/04/2016 al 04/04/2017", estatus: "REGISTRADO", fecha de registro: "2025-11-09 09:00:00" },
+    "CBG3760391208": { nombre: "MARIA JOSÉ TELLO", matricula: "q111111111", emisor: "DGB ESTADO DE MÉXICO", plantel: "15EEX0201Q", plan: "BACHILLERATO GENERAL", promedio: "9.0", Periodo: "04/04/2016 al 04/04/2017", estatus: "REGISTRADO", timbrado: "2025-11-09 09:00:00" },
     "CBG3760391209": { nombre: "RICARDO MARIN PAZ", matricula: "1610M850118", emisor: "DGB GUANAJUATO", plantel: "11DEX0089W", plan: "BACHILLERATO GENERAL", promedio: "8.6", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-09 11:25:33" },
     "CBG3760391210": { nombre: "XIMENA NAVARRO REYES", matricula: "1611R840441", emisor: "DGB MICHOACÁN", plantel: "16EEX0055V", plan: "BACHILLERATO GENERAL", promedio: "8.9", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-10 13:12:11" },
     "CBG3760391211": { nombre: "ALBERTO DIAZ GOMEZ", matricula: "1612M830774", emisor: "DGB HIDALGO", plantel: "13DEX0011B", plan: "BACHILLERATO GENERAL", promedio: "8.1", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-10 15:40:50" },
@@ -65,6 +65,7 @@ const baseDatos = {
     "CBG3760391249": { nombre: "LUCERO HOZANZA M.", matricula: "1650M450448", emisor: "DGB MORELOS", plantel: "17EEX0011C", plan: "BACHILLERATO GENERAL", promedio: "9.1", creditos: "360", estatus: "REGISTRADO", timbrado: "2025-11-29 16:15:33" }
 
 };
+
 
 
 
